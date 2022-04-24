@@ -7,33 +7,26 @@
     <title>Pictgram</title>
   </head>
   <body>
-    <div class="users-new-wrapper" layout:fragment="contents">
+<div class="topics-new-wrapper" layout:fragment="contents">
   <div class="container">
     <div class="row p-form-top d-none d-lg-block d-xl-block d-xxl-block"></div>
     <div class="row">
-      <main class="col-md-4 mx-auto">
-        <h1 class="text-center text-white">Sign in</h1>
-        <form method="post" th:action="@{/user}" th:object="${form}">
+      <div class="col-md-6 mx-auto">
+        <h1 class="text-center">Add Picture</h1>
+        <form class="new_topic" id="new_topic" method="post" th:action="@{/topic}" th:object="${form}" enctype="multipart/form-data">
           <div layout:replace="~{layouts/common::messages}"></div>
+          <input type="hidden" th:field="*{id}" />
           <div class="mb-3">
-            <label class="form-label text-white" for="user_name">Name</label>
-            <input type="text" class="form-control" th:field="*{name}" /><p th:if="${#fields.hasErrors('name')}" class="error-message" th:errors="*{name}"></p>
+            <label class="form-label text-black" for="topic_image">Image</label>
+            <input type="file" class="form-control-file" th:field="*{image}" /><p th:if="${#fields.hasErrors('image')}" class="error-message" th:errors="*{image}"></p>
           </div>
           <div class="mb-3">
-            <label class="form-label text-white" for="user_email">Email</label>
-            <input type="text" class="form-control" th:field="*{email}" /><p th:if="${#fields.hasErrors('email')}" class="error-message" th:errors="*{email}"></p>
+            <label class="form-label text-black" for="topic_description">Description</label>
+            <textarea class="form-control" th:field="*{description}" rows="10" th:errorclass="error-field"></textarea><p th:if="${#fields.hasErrors('description')}" class="error-message" th:errors="*{description}"></p>
           </div>
-          <div class="mb-3">
-            <label class="form-label text-white" for="user_password">Password</label>
-            <input class="form-control" type="password" th:field="*{password}" /><p th:if="${#fields.hasErrors('password')}" class="error-message" th:errors="*{password}"></p>
-          </div>
-          <div class="mb-3">
-            <label class="form-label text-white" for="user_password_confirmation">Password confirmation</label>
-            <input type="password" class="form-control" th:field="*{passwordConfirmation}" /><p th:if="${#fields.hasErrors('passwordConfirmation')}" class="error-message" th:errors="*{passwordConfirmation}"></p>
-          </div>
-          <input type="submit" value="登録" class="btn w-100 btn-outline-light" />
+          <input type="submit" value="投稿" class="btn w-100 btn-outline-dark" />
         </form>
-      </main>
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,7 @@
 package com.example.pictgram.form;
 
+import java.util.List;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -16,6 +18,10 @@ public class TopicForm {
     private Long id;
 
     private Long userId;
+    
+    private List<FavoriteForm> favorites;
+
+    private FavoriteForm favorite;
 
     @ImageNotEmpty
     @ImageByte(max = 2000000)

@@ -8,9 +8,5 @@ spring:
     console:
       enabled: true
       debug: true
-<<<<<<< HEAD
-      image:
-=======
   image:
->>>>>>> topic/3
-  local: true
+    local: true

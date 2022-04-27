@@ -75,7 +75,7 @@ public class FavoritesController {
         return "redirect:/topics";
     }
 
-    @RequestMapping(value = "/favorite", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/favorite/del", method = RequestMethod.GET)
     @Transactional
     public String destroy(Principal principal, @RequestParam("topic_id") long topicId, RedirectAttributes redirAttrs,
             Locale locale) {

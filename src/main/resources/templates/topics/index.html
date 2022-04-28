@@ -33,9 +33,6 @@
              <a href="/topics/1/comments/new" th:href="@{'/topics/{id}/comments/new'(id=${topic.id})}" class="icon" th:data-_csrf="${_csrf.token}">
                <img src="/images/icons/comment.png" th:src="@{/images/icons/comment.png}" />
              </a>
-             <a href="/topics/1/comments/new" th:href="@{'/topics/{id}/comments/new'(id=${topic.id})}" class="icon" th:data-_csrf="${_csrf.token}">
-               <img src="/images/icons/comment.png" th:src="@{/images/icons/comment.png}" />
-             </a>
              </div>
             <pre class="description" th:text="${topic.description}"></pre>
             <div class="comments">

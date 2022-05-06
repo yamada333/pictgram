@@ -21,6 +21,16 @@
     <nav layout:replace="~{layouts/common :: nav}"></nav>
     <div layout:fragment="contents"></div>
     <script src="/scripts/method-convert.js" th:src="@{/scripts/method-convert.js}"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+   <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+      OneSignal.init({
+      appId: "5e943aa0-8e24-4b8e-a027-aa2ca626f758",
+      });
+       });
+    </script>
     <script>
       $(function(){
     	  convertMethod('.convert');

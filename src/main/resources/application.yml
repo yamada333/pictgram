@@ -24,6 +24,17 @@ spring:
   thymeleaf:
     check-template-location: false
     
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${google.client.id}
+            client-secret: ${google.client.secret} 
+          github:
+            clientId: ${github.client.id}
+            clientSecret: ${github.client.secret}
+    
   googlemap:
    key: ${googlemap.key}
 cloud:

@@ -21,6 +21,13 @@
    </div>
     <nav layout:replace="~{layouts/common :: nav}"></nav>
     <div layout:fragment="contents"></div>
+    <footer class="footer" th:if="${hasFooter}">
+     <div class="container">
+       <div class="row">
+ 		<div class="col-md-4" th:each="tag : ${tags}" th:utext="${tag}"></div>
+       </div>
+     </div>
+   </footer>
     <script src="/scripts/method-convert.js" th:src="@{/scripts/method-convert.js}"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
